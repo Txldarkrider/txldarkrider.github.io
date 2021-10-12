@@ -3,7 +3,7 @@ const app = express();
 const server = require('http').createServer(app);
 const websocket = require('ws');
 
-const wss = new websocket.Server({port:3000,host:"192.168.0.18"});
+const wss = new websocket.Server({server:server});
 
 
 wss.on('connection',function connection(ws){
