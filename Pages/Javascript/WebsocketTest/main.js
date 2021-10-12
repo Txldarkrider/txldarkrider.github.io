@@ -1,4 +1,4 @@
-let socket = new WebSocket('ws://76.190.183.136:3000');
+let socket = new WebSocket('wss://76.190.183.136:3000');
 
 socket.addEventListener('open',(e)=>{
   socket.send('Hello Server!');
