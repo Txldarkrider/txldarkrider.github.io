@@ -1,6 +1,6 @@
 const ws = require('ws');
 
-const wss = new ws.WebSocketServer({ port: 3000 });
+const wss = new ws.WebSocketServer({host:'192.168.0.18', port: 3000 });
 
 console.log("Server Started");
 
