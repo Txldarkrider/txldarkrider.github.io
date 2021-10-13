@@ -1,12 +1,12 @@
 const express = require("express");
 const app = express();
 const server = require('http').createServer(app);
-const websocket = require('ws');
+const websocket = require('websocket');
 
 const wss = new websocket.Server({server:server});
 
-
 wss.on('connection',function connection(ws){
+    console.log("Yes");
     ws.on('message',function icnoming(message){
         console.log(message);
     });
