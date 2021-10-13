@@ -1,4 +1,4 @@
-let socket = new WebSocket('ws://192.168.0.18:3000/');
+let socket = new WebSocket('wss://192.168.0.18:3000/');
 // let socket = new WebSocket('wss://');
 
 // Connection opened
