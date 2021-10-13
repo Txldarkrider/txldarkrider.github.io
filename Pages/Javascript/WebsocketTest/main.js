@@ -1,4 +1,4 @@
-// let socket = new WebSocket('wss://76.190.183.136:3000');
+let socket = new WebSocket('ws://localhost:8080/');
 // let socket = new WebSocket('wss://');
 
 socket.addEventListener('open',(e)=>{
