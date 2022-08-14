@@ -1,15 +1,28 @@
 class Rect{
-    constructor(x,y,w,h,c){
+    constructor(x,y,w,h,c,fill=true,otln=false,image=false,imgF=""){
         this.x = x;
         this.y = y;
         this.w = w;
         this.h = h;
         this.c = c;
+        this.otln = otln;
+        this.fill = fill;
+        this.img = image;
+        this.imgF = imgF;
     }
     Draw(ctx){
         ctx.save();
-            ctx.fillStyle = this.c;
-            ctx.fillRect(this.x, this.y,this.w,this.h);
+            if(this.fill){
+                ctx.fillStyle = this.c;
+                ctx.fillRect(this.x, this.y,this.w,this.h);
+            }
+            if(this.otln){
+                ctx.strokeStyle = this.c;
+                ctx.strokeRect(this.x,this.y,this.w,this.h);
+            }
+            if(this.img){
+                ctx.drawImage(this.imgF,this.x,this.y,this.w,this.h);
+            }
         ctx.restore();
     }
 }
@@ -65,5 +78,25 @@ class Player{
     Update(ctx){
         this.UpdatePos();
         this.Draw(ctx);
+    }
+}
+
+class Mouse{
+    constructor(rect){
+        this.rect = rect;
+        this.keys = [];
+    }
+    Draw(ctx){
+        this.rect.Draw(ctx);
+    }
+}
+
+class Plot{
+    constructor(rect){
+        this.rect = rect;
+        this.currentPlant = "";
+    }
+    Draw(ctx){
+        this.rect.Draw(ctx);
     }
 }
